@@ -1,0 +1,27 @@
+---
+title: "获取白名单"
+---
+
+用户获取白名单列表
+
+    **post** &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;/account/getWhitelist
+
+    **Body**
+    ---
+    <ParamField path="appKey" type="string" required>
+        appKey密钥
+    </ParamField>
+
+    **Response**
+    ---
+    <ResponseField name="code" type="enum<integer>" defalut="default: 0">
+        状态码，0为操作成功
+
+        Available options: 0, -1
+    </ResponseField>
+    <ResponseField name="data" type="object">
+        响应数据
+    </ResponseField>
+    <ResponseField name="msg" type="string">
+        响应消息
+    </ResponseField>

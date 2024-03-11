@@ -1,0 +1,43 @@
+---
+title: "获取代理ip服务器地址"
+---
+
+代理商获取代理ip服务器地址
+
+    **post** &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;/ip/getIpAddress
+
+    **Body**
+    ---
+    <ParamField path="appKey" type="string" required>
+        appKey密钥
+    </ParamField>
+    <ParamField path="params" type="object" required>
+        动态参数集合
+        <Card>
+            <ParamField path="&nbsp;asian" type="enum<integer>">
+                &nbsp;&nbsp;地区 0:非亚洲 1:亚洲
+            </ParamField>
+        </Card>
+        
+    </ParamField>
+
+    **Response**
+    ---
+    <ResponseField name="code" type="enum<integer>" defalut="default: 0">
+        状态码，0为操作成功
+
+        Available options: 0, -1
+    </ResponseField>
+    <ResponseField name="data" type="object">
+         <Card>
+            <ResponseField name="&nbsp;hosts" type="string[]">
+                &nbsp;&nbsp;IP地址
+            </ResponseField>
+            <ResponseField name="&nbsp;port" type="integer">
+                &nbsp;&nbsp;端口
+            </ResponseField>
+        </Card>
+    </ResponseField>
+    <ResponseField name="msg" type="string">
+        响应消息
+    </ResponseField>

@@ -34,21 +34,32 @@
   ],
   "navigation": [
     {
-      "group": "获取代理",
+      "group": "白名单",
       "pages": [
-        "angecy/index"
+        "whitelist/get",
+        "whitelist/add"
       ]
     },
     {
-      "group": "解决方案",
+      "group": "流量相关",
       "pages": [
-        "solve/index"
+        "flow/get"
       ]
     },
     {
-      "group": "帮助中心",
+      "group": "代理商相关",
       "pages": [
-        "help/index"
+        "agency/create",
+        "agency/distribute",
+        "agency/check"
+      ]
+    },
+    {
+      "group": "代理IP相关",
+      "pages": [
+        "ip/address",
+        "ip/area",
+        "ip/country"
       ]
     }
   ]

@@ -1,0 +1,34 @@
+---
+title: "获取国家列表"
+---
+
+代理商获取国家列表
+
+    **post** &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;/ip/getCountryList
+
+    **Body**
+    ---
+    <ParamField path="appKey" type="string" required>
+        appKey密钥
+    </ParamField>
+
+    **Response**
+    ---
+    <ResponseField name="code" type="enum<integer>" defalut="default: 0">
+        状态码，0为操作成功
+
+        Available options: 0, -1
+    </ResponseField>
+    <ResponseField name="data" type="object[]">
+         <Card>
+            <ResponseField name="&nbsp;code" type="string">
+                &nbsp;&nbsp;代码
+            </ResponseField>
+            <ResponseField name="&nbsp;name" type="string">
+                &nbsp;&nbsp;名称
+            </ResponseField>
+        </Card>
+    </ResponseField>
+    <ResponseField name="msg" type="string">
+        响应消息
+    </ResponseField>

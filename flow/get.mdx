@@ -1,0 +1,33 @@
+---
+title: "获取剩余流量"
+---
+
+用户获取剩余流量
+    **post** &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;/account/getUsableTraffic
+
+    **Body**
+    ---
+    <ParamField path="appKey" type="string" required>
+        appKey密钥
+    </ParamField>
+
+    **Response**
+    ---
+    <ResponseField name="code" type="enum<integer>" defalut="default: 0">
+        状态码，0为操作成功
+
+        Available options: 0, -1
+    </ResponseField>
+    <ResponseField name="data" type="object">
+        <Card>
+            <ResponseField name="&nbsp;fullTraffic" type="integer">
+                &nbsp;&nbsp;总流量
+            </ResponseField>
+            <ResponseField name="&nbsp;traffic" type="integer">
+                &nbsp;&nbsp;剩余流量
+            </ResponseField>
+        </Card>
+    </ResponseField>
+    <ResponseField name="msg" type="string">
+        响应消息
+    </ResponseField>
