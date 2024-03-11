@@ -1,91 +1,55 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "ispkey",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "https://ispkey.com/web/images/logo.png",
+    "light": "https://ispkey.com/web/images/logo.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
-    "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
-    }
+    "primary": "#754ffe"
   },
   "topbarLinks": [
     {
-      "name": "11111111",
+      "name": "中文",
       "url": "mailto:hi@mintlify.com"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
-  },
-  "tabs": [
+    },
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "控制台",
+      "url": "https://ispkey.com/admin/"
     }
+
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "icon": "house",
+      "name": "首页",
+      "url": "https://ispkey.com/"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "icon": "product-hunt",
+      "name": "产品",
+      "url": "https://ispkey.com/var-ip"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "获取代理",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "angecy/index"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "解决方案",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "solve/index"
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "帮助中心",
       "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "help/index"
       ]
     }
-  ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
-  }
+  ]
 }
