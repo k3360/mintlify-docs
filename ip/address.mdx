@@ -41,3 +41,131 @@ title: "获取代理ip服务器地址"
     <ResponseField name="msg" type="string">
         响应消息
     </ResponseField>
+
+    <RequestExample>
+        ```bash cURL
+            curl --request POST \
+            --url https://apiv1.cakeip.com/openapi/ip/getIpAddress \
+            --header 'Content-Type: application/json' \
+            --data '{
+            "appKey": "<string>",
+            "params": {
+                "asian": 0
+            }
+            }'
+        ```
+        ```bash Python
+            import requests
+
+            url = "https://apiv1.cakeip.com/openapi/ip/getIpAddress"
+
+            payload = {
+                "appKey": "<string>",
+                "params": {"asian": 0}
+            }
+            headers = {"Content-Type": "application/json"}
+
+            response = requests.request("POST", url, json=payload, headers=headers)
+
+            print(response.text)
+        ```
+        ```bash JavaScript
+            const options = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: '{"appKey":"<string>","params":{"asian":0}}'
+            };
+
+            fetch('https://apiv1.cakeip.com/openapi/ip/getIpAddress', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+        ```
+        ```bash PHP
+            <?php
+
+            $curl = curl_init();
+
+            curl_setopt_array($curl, [
+            CURLOPT_URL => "https://apiv1.cakeip.com/openapi/ip/getIpAddress",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "{\n  \"appKey\": \"<string>\",\n  \"params\": {\n    \"asian\": 0\n  }\n}",
+            CURLOPT_HTTPHEADER => [
+                "Content-Type: application/json"
+            ],
+            ]);
+
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
+
+            curl_close($curl);
+
+            if ($err) {
+            echo "cURL Error #:" . $err;
+            } else {
+            echo $response;
+            }
+        ```
+        ```bash Go
+            package main
+
+            import (
+                "fmt"
+                "strings"
+                "net/http"
+                "io/ioutil"
+            )
+
+            func main() {
+
+                url := "https://apiv1.cakeip.com/openapi/ip/getIpAddress"
+
+                payload := strings.NewReader("{\n  \"appKey\": \"<string>\",\n  \"params\": {\n    \"asian\": 0\n  }\n}")
+
+                req, _ := http.NewRequest("POST", url, payload)
+
+                req.Header.Add("Content-Type", "application/json")
+
+                res, _ := http.DefaultClient.Do(req)
+
+                defer res.Body.Close()
+                body, _ := ioutil.ReadAll(res.Body)
+
+                fmt.Println(res)
+                fmt.Println(string(body))
+
+            }
+        ```
+        ```bash Java
+            HttpResponse<String> response = Unirest.post("https://apiv1.cakeip.com/openapi/ip/getIpAddress")
+            .header("Content-Type", "application/json")
+            .body("{\n  \"appKey\": \"<string>\",\n  \"params\": {\n    \"asian\": 0\n  }\n}")
+            .asString();
+        ```
+    </RequestExample>
+    <ResponseExample>
+        ```bash 200
+            {
+            "code": 0,
+            "data": {
+                "hosts": [
+                "137.184.190.238",
+                "164.92.111.133"
+                ],
+                "port": 123
+            },
+            "msg": "<string>"
+            }
+        ```
+        ```bash 400
+            {
+            "error": 123,
+            "message": "<string>"
+            }
+        ```
+    </ResponseExample>
