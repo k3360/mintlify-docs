@@ -11,10 +11,6 @@
   },
   "topbarLinks": [
     {
-      "name": "中文",
-      "url": "mailto:hi@mintlify.com"
-    },
-    {
       "name": "控制台",
       "url": "https://ispkey.com/admin/"
     }
