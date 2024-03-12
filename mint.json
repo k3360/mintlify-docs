@@ -33,7 +33,8 @@
       "group": "白名单",
       "pages": [
         "whitelist/get",
-        "whitelist/add"
+        "whitelist/add",
+        "whitelist/delete"
       ]
     },
     {
