@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "ispkey",
   "logo": {
-    "dark": "https://ispkey.com/web/images/logo.png",
-    "light": "https://ispkey.com/web/images/logo.png"
+    "dark": "/logo/logo-dark.png",
+    "light": "/logo/logo.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
