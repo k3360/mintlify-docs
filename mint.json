@@ -17,6 +17,7 @@
 
   ],
   "tabs": [
+
     {
       "name": "官网首页",
       "url": "https://www.ispkey.com/"
@@ -26,9 +27,8 @@
       "url": "https://www.ispkey.com/var-ip"
     }
   ],
-  "topAnchor": {
-    "name": "接口文档",
-    "icon": "file-word"
+  "primaryTab": {
+    "name": "接口文档"
   },
   "navigation": [
     {
