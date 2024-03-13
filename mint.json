@@ -16,47 +16,49 @@
     }
 
   ],
-  "anchors": [
+  "tabs": [
     {
-      "icon": "house",
       "name": "官网首页",
       "url": "https://www.ispkey.com/"
     },
-    {
-      "icon": "product-hunt",
+     {
       "name": "动态住宅IP",
       "url": "https://www.ispkey.com/var-ip"
     }
   ],
+  "topAnchor": {
+    "name": "接口文档",
+    "icon": "file-word"
+  },
   "navigation": [
     {
       "group": "白名单",
       "pages": [
-        "whitelist/get",
-        "whitelist/add",
-        "whitelist/delete"
+        "API/whitelist/get",
+        "API/whitelist/add",
+        "API/whitelist/delete"
       ]
     },
     {
       "group": "流量相关",
       "pages": [
-        "traffic/get"
+        "API/traffic/get"
       ]
     },
     {
       "group": "代理商相关",
       "pages": [
-        "agency/create",
-        "agency/distribute",
-        "agency/check"
+        "API/agency/create",
+        "API/agency/distribute",
+        "API/agency/check"
       ]
     },
     {
       "group": "代理IP相关",
       "pages": [
-        "ip/address",
-        "ip/area",
-        "ip/country"
+        "API/ip/address",
+        "API/ip/area",
+        "API/ip/country"
       ]
     }
   ]
