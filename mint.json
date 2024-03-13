@@ -40,7 +40,7 @@
     {
       "group": "流量相关",
       "pages": [
-        "flow/get"
+        "traffic/get"
       ]
     },
     {
