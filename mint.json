@@ -5,7 +5,7 @@
     "dark": "/logo/logo-dark.png",
     "light": "/logo/logo.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/favicon.svg",
   "colors": {
     "primary": "#754ffe"
   },
@@ -19,13 +19,13 @@
   "anchors": [
     {
       "icon": "house",
-      "name": "首页",
-      "url": "https://ispkey.com/"
+      "name": "官网首页",
+      "url": "https://www.ispkey.com/"
     },
     {
       "icon": "product-hunt",
-      "name": "产品",
-      "url": "https://ispkey.com/var-ip"
+      "name": "动态住宅IP",
+      "url": "https://www.ispkey.com/var-ip"
     }
   ],
   "navigation": [
