@@ -15,7 +15,7 @@ title: "添加白名单"
 <Tab title="cURL">
 ```bash
 curl --request POST \
---url http://www.ispkey.com/api/white/addWhitelist \
+--url https://open.ispkey.com/api/white/addWhitelist \
 --header 'Content-Type: application/json' \
 --data '{
 "appKey": "<string>",
@@ -27,7 +27,7 @@ curl --request POST \
 ```Python
 import requests
 
-url = "http://www.ispkey.com/api/white/addWhitelist"
+url = "https://open.ispkey.com/api/white/addWhitelist"
 
 payload = {
     "appKey": "<string>",
@@ -47,7 +47,7 @@ print(response.text)
 $curl = curl_init();
 
 curl_setopt_array($curl, [
-CURLOPT_URL => "http://www.ispkey.com/api/white/addWhitelist",
+CURLOPT_URL => "https://open.ispkey.com/api/white/addWhitelist",
 CURLOPT_RETURNTRANSFER => true,
 CURLOPT_ENCODING => "",
 CURLOPT_MAXREDIRS => 10,
@@ -80,7 +80,7 @@ const options = {
     body: JSON.stringify({"appKey":"<string>","ipAddr":"<string>"})
 };
 
-fetch('http://www.ispkey.com/api/white/addWhitelist', options)
+fetch('https://open.ispkey.com/api/white/addWhitelist', options)
 .then(response => response.json())
 .then(response => console.log(response))
 .catch(err => console.error(err));
@@ -99,7 +99,7 @@ import (
 
 func main() {
 
-    url := "http://www.ispkey.com/api/white/addWhitelist"
+    url := "https://open.ispkey.com/api/white/addWhitelist"
 
     payload := strings.NewReader("{\"appKey\":\"<string>\",\"ipAddr\":\"<string>\"}")
 
@@ -120,7 +120,7 @@ func main() {
 </Tab>
 <Tab title="Java">
 ```Java
-HttpResponse<String> response = Unirest.post("http://www.ispkey.com/api/white/addWhitelist")
+HttpResponse<String> response = Unirest.post("https://open.ispkey.com/api/white/addWhitelist")
 .header("Content-Type", "application/json")
 .body("{\"appKey\":\"<string>\",\"ipAddr\":\"<string>\"}")
 .asString();
