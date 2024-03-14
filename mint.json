@@ -34,31 +34,31 @@
     {
       "group": "白名单",
       "pages": [
-        "API/whitelist/get",
-        "API/whitelist/add",
-        "API/whitelist/delete"
+        "api/whitelist/get",
+        "api/whitelist/add",
+        "api/whitelist/delete"
       ]
     },
     {
       "group": "流量相关",
       "pages": [
-        "API/traffic/get"
+        "api/traffic/get"
       ]
     },
     {
       "group": "代理商相关",
       "pages": [
-        "API/agency/create",
-        "API/agency/distribute",
-        "API/agency/check"
+        "api/agency/create",
+        "api/agency/distribute",
+        "api/agency/check"
       ]
     },
     {
       "group": "代理IP相关",
       "pages": [
-        "API/ip/address",
-        "API/ip/area",
-        "API/ip/country"
+        "api/ip/address",
+        "api/ip/area",
+        "api/ip/country"
       ]
     }
   ]
