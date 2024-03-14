@@ -1,170 +1,156 @@
 ---
 title: "获取地区列表"
+sidebarTitle: "获取地区列表"
+openapi: "POST /state/getRegionList"
 ---
 
-代理商获取国家地区列表
+`POST` /state/getRegionList
 
-    **post** &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;/ip/getRegionList
+**请求体**
 
-    **Body**
-    ---
-    <ParamField path="appKey" type="string" required>
-        appKey密钥
-    </ParamField>
-    <ParamField path="params" type="object" required>
-        动态参数集合
-        <Card>
-            <ParamField path="&nbsp;countryId" type="string">
-                &nbsp;&nbsp;国家代码
-            </ParamField>
-        </Card>
-        
-    </ParamField>
+| 名称 | 类型 | 必选 | 说明 |
+|---|---|---|---|
+| appKey | string | 是 | 密钥 |
+| countryId | string | 是 | 国家ID |
 
-    **Response**
-    ---
-    <ResponseField name="code" type="enum<integer>" defalut="default: 0">
-        状态码，0为操作成功
+```JSON
+{
+    "appKey": "<string>",
+    "countryId": "<string>"
+}
+```
 
-        Available options: 0, -1
-    </ResponseField>
-    <ResponseField name="data" type="object">
-         <Card>
-            <ResponseField name="&nbsp;code" type="string">
-                &nbsp;&nbsp;代码
-            </ResponseField>
-            <ResponseField name="&nbsp;name" type="string">
-                &nbsp;&nbsp;名称
-            </ResponseField>
-        </Card>
-    </ResponseField>
-    <ResponseField name="msg" type="string">
-        响应消息
-    </ResponseField>
 
-    <RequestExample>
-        ```bash cURL
-            curl --request POST \
-            --url https://apiv1.cakeip.com/openapi/ip/getRegionList \
-            --header 'Content-Type: application/json' \
-            --data '{
-            "appKey": "<string>",
-            "params": {
-                "countryId": "<string>"
-            }
-            }'
-        ```
-        ```bash Python
-            import requests
+**响应体**
 
-            url = "https://apiv1.cakeip.com/openapi/ip/getRegionList"
+| 名称 | 类型 | 说明 |
+|---|---|---|
+| code | int | 响应代码 |
+| msg | string | 响应消息 |
+| data | any  | 响应数据 |
 
-            payload = {
-                "appKey": "<string>",
-                "params": {"countryId": "<string>"}
-            }
-            headers = {"Content-Type": "application/json"}
+<Tabs>
+<Tab title="成功">
+```JSON
+{
+  "code": 0,
+  "msg": "<string>"
+  "data": {},
+}
+```
+</Tab>
+<Tab title="失败">
+```JSON
+{
+  "code": 1,
+  "msg": "<string>"
+}
+```
+</Tab>
+</Tabs>
 
-            response = requests.request("POST", url, json=payload, headers=headers)
+<RequestExample>
+```bash cURL
+curl --request POST \
+--url https://open.ispkey.com/api/state/getRegionList \
+--header 'Content-Type: application/json' \
+--data '{
+    "appKey": "<string>",
+    "countryId": "<string>"
+}'
+```
+```bash Python
+import requests
 
-            print(response.text)
-        ```
-        ```bash JavaScript
-            const options = {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: '{"appKey":"<string>","params":{"countryId":"<string>"}}'
-            };
+url = "https://open.ispkey.com/api/state/getRegionList"
 
-            fetch('https://apiv1.cakeip.com/openapi/ip/getRegionList', options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
-        ```
-        ```bash PHP
-            <?php
+payload = {
+    "appKey": "<string>",
+    "countryId": "<string>"
+}
+headers = {"Content-Type": "application/json"}
 
-            $curl = curl_init();
+response = requests.request("POST", url, json=payload, headers=headers)
 
-            curl_setopt_array($curl, [
-            CURLOPT_URL => "https://apiv1.cakeip.com/openapi/ip/getRegionList",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => "{\n  \"appKey\": \"<string>\",\n  \"params\": {\n    \"countryId\": \"<string>\"\n  }\n}",
-            CURLOPT_HTTPHEADER => [
-                "Content-Type: application/json"
-            ],
-            ]);
+print(response.text)
+```
+```bash PHP
+<?php
 
-            $response = curl_exec($curl);
-            $err = curl_error($curl);
+$curl = curl_init();
 
-            curl_close($curl);
+curl_setopt_array($curl, [
+CURLOPT_URL => "https://open.ispkey.com/api/state/getRegionList",
+CURLOPT_RETURNTRANSFER => true,
+CURLOPT_ENCODING => "",
+CURLOPT_MAXREDIRS => 10,
+CURLOPT_TIMEOUT => 30,
+CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+CURLOPT_CUSTOMREQUEST => "POST",
+CURLOPT_POSTFIELDS => "{\"appKey\":\"<string>\",\"countryId\":\"<string>\"}",
+CURLOPT_HTTPHEADER => [
+    "Content-Type: application/json"
+],
+]);
 
-            if ($err) {
-            echo "cURL Error #:" . $err;
-            } else {
-            echo $response;
-            }
-        ```
-        ```bash Go
-            package main
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-            import (
-                "fmt"
-                "strings"
-                "net/http"
-                "io/ioutil"
-            )
+curl_close($curl);
 
-            func main() {
+if ($err) {
+    echo "cURL Error #:" . $err;
+} else {
+    echo $response;
+}
+```
+```bash JavaScript
+const options = {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({"appKey":"<string>","countryId":"<string>"})
+};
 
-                url := "https://apiv1.cakeip.com/openapi/ip/getRegionList"
+fetch('https://open.ispkey.com/api/state/getRegionList', options)
+.then(response => response.json())
+.then(response => console.log(response))
+.catch(err => console.error(err));
+```
+```bash Go
+package main
 
-                payload := strings.NewReader("{\n  \"appKey\": \"<string>\",\n  \"params\": {\n    \"countryId\": \"<string>\"\n  }\n}")
+import (
+    "fmt"
+    "strings"
+    "net/http"
+    "io/ioutil"
+)
 
-                req, _ := http.NewRequest("POST", url, payload)
+func main() {
 
-                req.Header.Add("Content-Type", "application/json")
+    url := "https://open.ispkey.com/api/state/getRegionList"
 
-                res, _ := http.DefaultClient.Do(req)
+    payload := strings.NewReader("{\"appKey\":\"<string>\",\"countryId\":\"<string>\"}")
 
-                defer res.Body.Close()
-                body, _ := ioutil.ReadAll(res.Body)
+    req, _ := http.NewRequest("POST", url, payload)
 
-                fmt.Println(res)
-                fmt.Println(string(body))
+    req.Header.Add("Content-Type", "application/json")
 
-            }
-        ```
-        ```bash Java
-            HttpResponse<String> response = Unirest.post("https://apiv1.cakeip.com/openapi/ip/getRegionList")
-            .header("Content-Type", "application/json")
-            .body("{\n  \"appKey\": \"<string>\",\n  \"params\": {\n    \"countryId\": \"<string>\"\n  }\n}")
-            .asString();
-        ```
-    </RequestExample>
-    <ResponseExample>
-        ```bash 200
-            {
-            "code": 0,
-            "data": [
-                {
-                "code": "<string>",
-                "name": "<string>"
-                }
-            ],
-            "msg": "<string>"
-            }
-        ```
-        ```bash 400
-            {
-            "error": 123,
-            "message": "<string>"
-            }
-        ```
-    </ResponseExample>
+    res, _ := http.DefaultClient.Do(req)
+
+    defer res.Body.Close()
+    body, _ := ioutil.ReadAll(res.Body)
+
+    fmt.Println(res)
+    fmt.Println(string(body))
+
+}
+```
+```bash Java
+HttpResponse<String> response = Unirest.post("https://open.ispkey.com/api/state/getRegionList")
+.header("Content-Type", "application/json")
+.body("{\"appKey\":\"<string>\",\"countryId\":\"<string>\"}")
+.asString();
+```
+</RequestExample>
+
