@@ -1,152 +1,152 @@
 ---
 title: "获取剩余流量"
+sidebarTitle: "获取剩余流量"
+openapi: "POST /traffic/getUsableTraffic"
 ---
 
-用户获取剩余流量
-    **post** &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;/account/getUsableTraffic
+`POST` /traffic/getUsableTraffic
 
-    **Body**
-    ---
-    <ParamField path="appKey" type="string" required>
-        appKey密钥
-    </ParamField>
+**请求体**
 
-    **Response**
-    ---
-    <ResponseField name="code" type="enum<integer>" defalut="default: 0">
-        状态码，0为操作成功
+| 名称 | 类型 | 必选 | 说明 |
+|---|---|---|---|
+| appKey | string | 是 | 密钥 |
 
-        Available options: 0, -1
-    </ResponseField>
-    <ResponseField name="data" type="object">
-        <Card>
-            <ResponseField name="&nbsp;fullTraffic" type="integer">
-                &nbsp;&nbsp;总流量
-            </ResponseField>
-            <ResponseField name="&nbsp;traffic" type="integer">
-                &nbsp;&nbsp;剩余流量
-            </ResponseField>
-        </Card>
-    </ResponseField>
-    <ResponseField name="msg" type="string">
-        响应消息
-    </ResponseField>
+```JSON
+{
+    "appKey": "<string>"
+}
+```
 
-        <RequestExample>
-        ```bash cURL
-            curl --request POST \
-            --url https://apiv1.cakeip.com/openapi/account/getUsableTraffic \
-            --header 'Content-Type: application/json' \
-            --data '{
-            "appKey": "<string>"
-            }'
-        ```
-        ```bash Python
-            import requests
 
-            url = "https://apiv1.cakeip.com/openapi/account/getUsableTraffic"
+**响应体**
 
-            payload = {"appKey": "<string>"}
-            headers = {"Content-Type": "application/json"}
+| 名称 | 类型 | 说明 |
+|---|---|---|
+| code | int | 响应代码 |
+| msg | string | 响应消息 |
+| data | any  | 响应数据 |
 
-            response = requests.request("POST", url, json=payload, headers=headers)
+<Tabs>
+<Tab title="成功">
+```JSON
+{
+  "code": 0,
+  "msg": "<string>"
+  "data": {},
+}
+```
+</Tab>
+<Tab title="失败">
+```JSON
+{
+  "code": 1,
+  "msg": "<string>"
+}
+```
+</Tab>
+</Tabs>
 
-            print(response.text)
-        ```
-        ```bash JavaScript
-            const options = {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: '{"appKey":"<string>"}'
-            };
+<RequestExample>
+```bash cURL
+curl --request POST \
+--url https://open.ispkey.com/api/traffic/getUsableTraffic \
+--header 'Content-Type: application/json' \
+--data '{
+"appKey": "<string>"
+}'
+```
+```bash Python
+import requests
 
-            fetch('https://apiv1.cakeip.com/openapi/account/getUsableTraffic', options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
-        ```
-        ```bash PHP
-            <?php
+url = "https://open.ispkey.com/api/traffic/getUsableTraffic"
 
-            $curl = curl_init();
+payload = {
+    "appKey": "<string>"
+}
+headers = {"Content-Type": "application/json"}
 
-            curl_setopt_array($curl, [
-            CURLOPT_URL => "https://apiv1.cakeip.com/openapi/account/getUsableTraffic",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => "{\n  \"appKey\": \"<string>\"\n}",
-            CURLOPT_HTTPHEADER => [
-                "Content-Type: application/json"
-            ],
-            ]);
+response = requests.request("POST", url, json=payload, headers=headers)
 
-            $response = curl_exec($curl);
-            $err = curl_error($curl);
+print(response.text)
+```
+```bash PHP
+<?php
 
-            curl_close($curl);
+$curl = curl_init();
 
-            if ($err) {
-            echo "cURL Error #:" . $err;
-            } else {
-            echo $response;
-            }
-        ```
-        ```bash Go
-            package main
+curl_setopt_array($curl, [
+CURLOPT_URL => "https://open.ispkey.com/api/traffic/getUsableTraffic",
+CURLOPT_RETURNTRANSFER => true,
+CURLOPT_ENCODING => "",
+CURLOPT_MAXREDIRS => 10,
+CURLOPT_TIMEOUT => 30,
+CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+CURLOPT_CUSTOMREQUEST => "POST",
+CURLOPT_POSTFIELDS => "{\"appKey\":\"<string>\"}",
+CURLOPT_HTTPHEADER => [
+    "Content-Type: application/json"
+],
+]);
 
-            import (
-                "fmt"
-                "strings"
-                "net/http"
-                "io/ioutil"
-            )
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-            func main() {
+curl_close($curl);
 
-                url := "https://apiv1.cakeip.com/openapi/account/getUsableTraffic"
+if ($err) {
+    echo "cURL Error #:" . $err;
+} else {
+    echo $response;
+}
+```
+```bash JavaScript
+const options = {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({"appKey":"<string>"})
+};
 
-                payload := strings.NewReader("{\n  \"appKey\": \"<string>\"\n}")
+fetch('https://open.ispkey.com/api/traffic/getUsableTraffic', options)
+.then(response => response.json())
+.then(response => console.log(response))
+.catch(err => console.error(err));
+```
+```bash Go
+package main
 
-                req, _ := http.NewRequest("POST", url, payload)
+import (
+    "fmt"
+    "strings"
+    "net/http"
+    "io/ioutil"
+)
 
-                req.Header.Add("Content-Type", "application/json")
+func main() {
 
-                res, _ := http.DefaultClient.Do(req)
+    url := "https://open.ispkey.com/api/traffic/getUsableTraffic"
 
-                defer res.Body.Close()
-                body, _ := ioutil.ReadAll(res.Body)
+    payload := strings.NewReader("{\"appKey\":\"<string>\"}")
 
-                fmt.Println(res)
-                fmt.Println(string(body))
+    req, _ := http.NewRequest("POST", url, payload)
 
-            }
-        ```
-        ```bash Java
-            HttpResponse<String> response = Unirest.post("https://apiv1.cakeip.com/openapi/account/getUsableTraffic")
-            .header("Content-Type", "application/json")
-            .body("{\n  \"appKey\": \"<string>\"\n}")
-            .asString();
-        ```
-    </RequestExample>
-    <ResponseExample>
-        ```bash 200
-            {
-            "code": 0,
-            "data": {
-                "fullTraffic": 123,
-                "traffic": 123
-            },
-            "msg": "<string>"
-            }
-        ```
-        ```bash 400
-            {
-            "error": 123,
-            "message": "<string>"
-            }
-        ```
-    </ResponseExample>
+    req.Header.Add("Content-Type", "application/json")
+
+    res, _ := http.DefaultClient.Do(req)
+
+    defer res.Body.Close()
+    body, _ := ioutil.ReadAll(res.Body)
+
+    fmt.Println(res)
+    fmt.Println(string(body))
+
+}
+```
+```bash Java
+HttpResponse<String> response = Unirest.post("https://open.ispkey.com/api/traffic/getUsableTraffic")
+.header("Content-Type", "application/json")
+.body("{\"appKey\":\"<string>\"}")
+.asString();
+```
+</RequestExample>
+
