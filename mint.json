@@ -32,6 +32,12 @@
   },
   "navigation": [
     {
+      "group": "公共参数",
+      "pages": [
+        "public-data/intro"
+      ]
+    },
+    {
       "group": "白名单",
       "pages": [
         "API/whitelist/get",

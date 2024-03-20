@@ -1,0 +1,30 @@
+---
+title: "简介"
+sidebarTitle: "简介"
+openapi: "https://apiv1.cakeip.com/openapi"
+---
+
+CakeIP 开放接口公共参数
+
+**请求基础路径**
+https://apiv1.cakeip.com/openapi
+
+**请求体**
+
+| 名称 | 类型 | 必选 | 说明 |
+|---|---|---|---|
+| appKey | string | 是 | 密钥 |
+| params | object | 是 | 参数集合 |
+
+```JSON
+{
+    "params": {},
+    "appKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+}
+
+```
+
+**备注**
+所有请求都需要传`appKey`。
+
+![title](/images/cakeip_dcs.jpg)
