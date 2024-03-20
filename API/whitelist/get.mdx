@@ -1,39 +1,41 @@
 ---
 title: "获取白名单"
 sidebarTitle: "获取白名单"
-openapi: "POST /white/getWhitelist"
+openapi: "GET /whitelist/get"
 ---
 
-`POST` /white/getWhitelist
+`GET` /whitelist/get
 
-**请求体**
+**请求参数**
 
 | 名称 | 类型 | 必选 | 说明 |
 |---|---|---|---|
 | appKey | string | 是 | 密钥 |
 
-```JSON
-{
-    "appKey": "<string>"
-}
+```url
+/whitelist/add?appKey=xxx
 ```
 
 
-**响应体**
+**响应结果**
 
 | 名称 | 类型 | 说明 |
 |---|---|---|
 | code | int | 响应代码 |
 | msg | string | 响应消息 |
-| data | any  | 响应数据 |
+| data | list  | 响应数据 |
 
 <Tabs>
 <Tab title="成功">
 ```JSON
 {
-  "code": 0,
-  "msg": "<string>"
-  "data": {},
+    "code": 0,
+    "msg": "success",
+    "data": [
+        {
+            "ip": "12.12.12.13"
+        }
+    ]
 }
 ```
 </Tab>
