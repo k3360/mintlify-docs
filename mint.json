@@ -12,7 +12,7 @@
   "topbarLinks": [
     {
       "name": "控制台",
-      "url": "https://ispkey.com/admin/"
+      "url": "https://www.ispkey.com/admin/"
     }
 
   ],
@@ -52,15 +52,7 @@
       ]
     },
     {
-      "group": "代理商相关",
-      "pages": [
-        "API/agency/create",
-        "API/agency/distribute",
-        "API/agency/check"
-      ]
-    },
-    {
-      "group": "代理IP相关",
+      "group": "国家/地区",
       "pages": [
         "API/ip/address",
         "API/ip/area",
