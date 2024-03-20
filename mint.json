@@ -42,7 +42,7 @@
       "pages": [
         "API/whitelist/get",
         "API/whitelist/add",
-        "API/whitelist/delete"
+        "API/whitelist/remove"
       ]
     },
     {
