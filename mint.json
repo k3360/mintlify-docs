@@ -54,9 +54,8 @@
     {
       "group": "国家/地区",
       "pages": [
-        "API/ip/address",
-        "API/ip/area",
-        "API/ip/country"
+        "API/region/country",
+        "API/region/region"
       ]
     }
   ]
