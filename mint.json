@@ -34,28 +34,28 @@
     {
       "group": "公共参数",
       "pages": [
-        "public-data/intro"
+        "common"
       ]
     },
     {
       "group": "白名单",
       "pages": [
-        "API/whitelist/get",
-        "API/whitelist/add",
-        "API/whitelist/remove"
+        "api-doc/whitelist/get",
+        "api-doc/whitelist/add",
+        "api-doc/whitelist/remove"
       ]
     },
     {
       "group": "流量相关",
       "pages": [
-        "API/traffic/get"
+        "api-doc/traffic/get"
       ]
     },
     {
       "group": "国家/地区",
       "pages": [
-        "API/region/country",
-        "API/region/region"
+        "api-doc/region/country",
+        "api-doc/region/region"
       ]
     }
   ]
