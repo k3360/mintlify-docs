@@ -10,10 +10,12 @@ openapi: "GET /region/getList"
 
 | 名称 | 类型 | 必选 | 说明 |
 |---|---|---|---|
-| pid | int | 是 | 国家ID |
+| pid | int | 是（与region二选一） | 国家ID |
+| region | string | 是（与pid二选一） | 国家编码 |
 
 ```url
 https://open.ispkey.com/api/region/getList?pid=75
+https://open.ispkey.com/api/region/getList?region=US
 ```
 
 
