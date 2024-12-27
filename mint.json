@@ -38,6 +38,13 @@
       ]
     },
     {
+      "group": "资源提取",
+      "pages": [
+        "api-doc/api/authentication",
+        "api-doc/api/whitelist"
+      ]
+    },
+    {
       "group": "白名单",
       "pages": [
         "api-doc/whitelist/get",

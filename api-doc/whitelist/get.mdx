@@ -1,10 +1,12 @@
 ---
 title: "获取白名单"
 sidebarTitle: "获取白名单"
-openapi: "GET /whitelist/get"
+openapi: "GET /api/whitelist/getList"
 ---
 
-`GET` /whitelist/get
+`GET` /api/whitelist/get
+
+**[白名单列表页面，点击跳转](https://ispkey.com/admin/whitelist/list)**
 
 **请求参数**
 
@@ -13,7 +15,7 @@ openapi: "GET /whitelist/get"
 | appKey | string | 是 | 密钥 |
 
 ```url
-https://open.ispkey.com/api/whitelist/add?appKey=xxx
+https://open.ispkey.com/api/whitelist/getList?appKey=xxx
 ```
 
 
@@ -51,13 +53,13 @@ https://open.ispkey.com/api/whitelist/add?appKey=xxx
 
 <RequestExample>
 ```bash cURL
-curl --location --request GET 'https://open.ispkey.com/api/whitelist/get?appKey=xxx' \
+curl --location --request GET 'https://open.ispkey.com/api/whitelist/getList?appKey=xxx' \
 --header 'User-Agent: Apifox/1.0.0 (https://apifox.com)'
 ```
 ```bash Python
 import requests
 
-url = "https://open.ispkey.com/api/whitelist/get?appKey=xxx"
+url = "https://open.ispkey.com/api/whitelist/getList?appKey=xxx"
 
 payload={}
 headers = {
@@ -74,7 +76,7 @@ print(response.text)
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-   CURLOPT_URL => 'https://open.ispkey.com/api/whitelist/get?appKey=xxx',
+   CURLOPT_URL => 'https://open.ispkey.com/api/whitelist/getList?appKey=xxx',
    CURLOPT_RETURNTRANSFER => true,
    CURLOPT_ENCODING => '',
    CURLOPT_MAXREDIRS => 10,
@@ -102,7 +104,7 @@ var requestOptions = {
    redirect: 'follow'
 };
 
-fetch("https://open.ispkey.com/api/whitelist/get?appKey=xxx", requestOptions)
+fetch("https://open.ispkey.com/api/whitelist/getList?appKey=xxx", requestOptions)
    .then(response => response.text())
    .then(result => console.log(result))
    .catch(error => console.log('error', error));
@@ -118,7 +120,7 @@ import (
 
 func main() {
 
-   url := "https://open.ispkey.com/api/whitelist/get?appKey=xxx"
+   url := "https://open.ispkey.com/api/whitelist/getList?appKey=xxx"
    method := "GET"
 
    client := &http.Client {
@@ -152,7 +154,7 @@ OkHttpClient client = new OkHttpClient().newBuilder()
 MediaType mediaType = MediaType.parse("text/plain");
 RequestBody body = RequestBody.create(mediaType, "");
 Request request = new Request.Builder()
-   .url("https://open.ispkey.com/api/whitelist/get?appKey=xxx")
+   .url("https://open.ispkey.com/api/whitelist/getList?appKey=xxx")
    .method("GET", body)
    .addHeader("User-Agent", "Apifox/1.0.0 (https://apifox.com)")
    .build();
