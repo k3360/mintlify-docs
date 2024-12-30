@@ -1,0 +1,181 @@
+---
+title: "白名单模式提取"
+sidebarTitle: "白名单模式提取"
+openapi: "GET /api/get_whitelist_ip"
+---
+
+`GET` /api/get_whitelist_ip
+
+**[提取配置页面，点击跳转](https://ispkey.com/admin/resources/fetch/fetchApiWin?auth=whitelist)**
+
+**请求参数**
+
+|名称|类型|必选|说明|
+|---|---|---|---|
+|user|string| 是 |认证账号|
+|pass|string| 是 |认证密码|
+|region|string| 否 |国家编码|
+|area|string| 否 |地区|
+|time|string| 否 |资源有效时间|
+|count|string| 是 |提取数量|
+|protocol|string| 否 |协议|
+|format|string| 是 |格式（json、txt）|
+|split|string| 否 |分隔符（txt专用，）|
+|splice|string| 否 |拼接格式（txt专用）|
+
+注：资源使用之前需将运行的服务器ip地址添加到白名单中
+
+```url
+https://open.ispkey.com/api/get_whitelist_ip?user=xxx&pass=xxx&count=10&protocol=socks5&format=json
+```
+
+**响应结果**
+
+|名称|类型|必选|说明|
+|---|---|---|---|
+|» code|integer|true|响应代码|
+|» msg|string|true|响应消息|
+|» data|[array]|true|响应数据|
+|»» ip|string|true|代理地址|
+|»» pass|string|true|代理端口|
+
+<Tabs>
+<Tab title="成功">
+```JSON
+{
+    "code": 0,
+    "msg": "操作成功",
+    "data": [
+        {
+            "ip": "xx.xx.xx.xx",
+            "pass": "xxx",
+        },
+        {
+            "ip": "xx.xx.xx.xx",
+            "pass": "xxx",
+        }
+        ]
+}
+```
+</Tab>
+<Tab title="失败">
+```JSON
+{
+  "code": 1,
+  "msg": "<string>"
+}
+```
+</Tab>
+</Tabs>
+
+<RequestExample>
+```bash cURL
+curl --location --request GET 'https://open.ispkey.com/api/get_whitelist_ip?user=xxx&pass=xxx&count=10&protocol=socks5&format=json' \
+--header 'User-Agent: Apifox/1.0.0 (https://apifox.com)'
+```
+```bash Python
+import requests
+
+url = "https://open.ispkey.com/api/get_whitelist_ip?user=xxx&pass=xxx&count=10&protocol=socks5&format=json"
+
+payload={}
+headers = {
+   'User-Agent': 'Apifox/1.0.0 (https://apifox.com)'
+}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
+```
+```bash PHP
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+   CURLOPT_URL => 'https://open.ispkey.com/api/get_whitelist_ip?user=xxx&pass=xxx&count=10&protocol=socks5&format=json',
+   CURLOPT_RETURNTRANSFER => true,
+   CURLOPT_ENCODING => '',
+   CURLOPT_MAXREDIRS => 10,
+   CURLOPT_TIMEOUT => 0,
+   CURLOPT_FOLLOWLOCATION => true,
+   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+   CURLOPT_CUSTOMREQUEST => 'GET',
+   CURLOPT_HTTPHEADER => array(
+      'User-Agent: Apifox/1.0.0 (https://apifox.com)'
+   ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response;
+```
+```bash JavaScript
+var myHeaders = new Headers();
+myHeaders.append("User-Agent", "Apifox/1.0.0 (https://apifox.com)");
+
+var requestOptions = {
+   method: 'GET',
+   headers: myHeaders,
+   redirect: 'follow'
+};
+
+fetch("https://open.ispkey.com/api/get_whitelist_ip?user=xxx&pass=xxx&count=10&protocol=socks5&format=json", requestOptions)
+   .then(response => response.text())
+   .then(result => console.log(result))
+   .catch(error => console.log('error', error));
+```
+```bash Go
+package main
+
+import (
+   "fmt"
+   "net/http"
+   "io/ioutil"
+)
+
+func main() {
+
+   url := "https://open.ispkey.com/api/get_whitelist_ip?user=xxx&pass=xxx&count=10&protocol=socks5&format=json"
+   method := "GET"
+
+   client := &http.Client {
+   }
+   req, err := http.NewRequest(method, url, nil)
+
+   if err != nil {
+      fmt.Println(err)
+      return
+   }
+   req.Header.Add("User-Agent", "Apifox/1.0.0 (https://apifox.com)")
+
+   res, err := client.Do(req)
+   if err != nil {
+      fmt.Println(err)
+      return
+   }
+   defer res.Body.Close()
+
+   body, err := ioutil.ReadAll(res.Body)
+   if err != nil {
+      fmt.Println(err)
+      return
+   }
+   fmt.Println(string(body))
+}
+```
+```bash Java
+OkHttpClient client = new OkHttpClient().newBuilder()
+   .build();
+MediaType mediaType = MediaType.parse("text/plain");
+RequestBody body = RequestBody.create(mediaType, "");
+Request request = new Request.Builder()
+   .url("https://open.ispkey.com/api/get_whitelist_ip?user=xxx&pass=xxx&count=10&protocol=socks5&format=json")
+   .method("GET", body)
+   .addHeader("User-Agent", "Apifox/1.0.0 (https://apifox.com)")
+   .build();
+Response response = client.newCall(request).execute();
+```
+</RequestExample>
+
